@@ -7,8 +7,10 @@ buildscript {
     ext.glide_version = "4.8.0"
     ext.nav_version = "2.3.1"
     ext.dagger_version = "2.14.1"
+    ext.lifecycle_version = "2.2.0"
 
     repositories {
+        maven { url 'https://maven.google.com' }
         google()
         jcenter()
     }
