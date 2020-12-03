@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CleanArchitecture</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">Title</string>
     <string name="content">Content</string>
+    <string name="note_saved">Done!</string>
+    <string name="error_note_saved">Something went wrong!</string>
 </resources>
