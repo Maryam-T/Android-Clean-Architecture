@@ -4,4 +4,5 @@
     <string name="content">Content</string>
     <string name="note_saved">Done!</string>
     <string name="error_note_saved">Something went wrong!</string>
+    <string name="last_update">Last updated</string>
 </resources>
