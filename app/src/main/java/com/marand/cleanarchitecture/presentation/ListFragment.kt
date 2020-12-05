@@ -16,9 +16,9 @@ import com.marand.cleanarchitecture.R
 import com.marand.cleanarchitecture.framework.ListViewModel
 import kotlinx.android.synthetic.main.fragment_list.*
 
-class ListFragment : Fragment() {
+class ListFragment : Fragment(), ListAction {
     private lateinit var viewModel: ListViewModel
-    private val notesListAdapter = NotesListAdapter(arrayListOf())
+    private val notesListAdapter = NotesListAdapter(arrayListOf(), this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,5 +61,11 @@ class ListFragment : Fragment() {
            notes_recycler_view.visibility = VISIBLE
            notesListAdapter.updateNotes(noteList.sortedByDescending { it.updateDate })
        })
+    }
+
+// -------------------------------------------------------------------------------------------------
+
+    override fun onClick(id: Long) {
+        goToNoteFragment(id)
     }
 }
