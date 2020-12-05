@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -19,6 +20,7 @@ import kotlinx.android.synthetic.main.fragment_note.*
 class NoteFragment : Fragment() {
     private lateinit var viewModel: NoteViewModel
     private var currentNote = Note("", "", 0L, 0L)
+    private var noteId = 0L
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +33,14 @@ class NoteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProviders.of(this).get(NoteViewModel::class.java)
+
+        arguments?.let {
+            noteId = NoteFragmentArgs.fromBundle(it).noteId
+        }
+
+        if (noteId != 0L) {
+            viewModel.getNote(noteId)
+        }
 
         check_button.setOnClickListener {
             if (!title_view.text.toString().isEmpty() || !content_view.text.toString().isEmpty()) {
@@ -60,6 +70,14 @@ class NoteFragment : Fragment() {
                 Navigation.findNavController(title_view).popBackStack()
             } else{
                 Toast.makeText(context, getString(R.string.error_note_saved), Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        viewModel.currentNote.observe(viewLifecycleOwner, Observer {note ->
+            note?.let {
+                currentNote = it
+                title_view.setText(it.title, TextView.BufferType.EDITABLE)
+                content_view.setText(it.content, TextView.BufferType.EDITABLE)
             }
         })
     }
