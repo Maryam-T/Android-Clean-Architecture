@@ -1,11 +1,10 @@
 package com.marand.cleanarchitecture.presentation
 
+import android.app.AlertDialog
 import android.content.Context.INPUT_METHOD_SERVICE
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import android.widget.Toast
@@ -21,6 +20,11 @@ class NoteFragment : Fragment() {
     private lateinit var viewModel: NoteViewModel
     private var currentNote = Note("", "", 0L, 0L)
     private var noteId = 0L
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -85,5 +89,31 @@ class NoteFragment : Fragment() {
     private fun hideKeyboard() {
         val imm = context?.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(title_view.windowToken, 0)
+    }
+
+// -------------------------------------------------------------------------------------------------
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.note_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.delete_note -> {
+                if (context != null && noteId != 0L) {
+                    AlertDialog.Builder(context)
+                            .setTitle(getString(R.string.delete_note))
+                            .setMessage(getString(R.string.delete_message))
+                            .setPositiveButton(getString(R.string.yes)) {dialogInterface, i ->
+                                viewModel.deleteNote(currentNote)
+                            }
+                            .setNegativeButton(getString(R.string.no)) {dialogInterface, i -> }
+                            .create()
+                            .show()
+                }
+            }
+        }
+        return true
     }
 }

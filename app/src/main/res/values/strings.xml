@@ -5,4 +5,8 @@
     <string name="note_saved">Done!</string>
     <string name="error_note_saved">Something went wrong!</string>
     <string name="last_update">Last updated</string>
+    <string name="delete_note">Delete note</string>
+    <string name="delete_message">Do you really want to delete this note?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>
