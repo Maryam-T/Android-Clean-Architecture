@@ -5,5 +5,6 @@ data class Note (
     var content: String,
     var creationData: Long,
     var updateDate: Long,
-    var id: Long = 0L
+    var id: Long = 0L,
+    var wordCount: Int = 0
 )

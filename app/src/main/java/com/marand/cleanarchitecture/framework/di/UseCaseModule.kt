@@ -2,10 +2,7 @@ package com.marand.cleanarchitecture.framework.di
 
 import com.marand.cleanarchitecture.framework.UseCases
 import com.marand.core.repository.NoteRepository
-import com.marand.core.usecase.AddNote
-import com.marand.core.usecase.DeleteNote
-import com.marand.core.usecase.GetAllNotes
-import com.marand.core.usecase.GetNote
+import com.marand.core.usecase.*
 import dagger.Module
 import dagger.Provides
 
@@ -17,6 +14,7 @@ class UseCaseModule {
             GetNote(repository),
             GetAllNotes(repository),
             AddNote(repository),
-            DeleteNote(repository)
+            DeleteNote(repository),
+            GetWordCount()
     )
 }

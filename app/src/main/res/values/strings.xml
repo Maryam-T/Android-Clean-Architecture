@@ -9,4 +9,5 @@
     <string name="delete_message">Do you really want to delete this note?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="word">Word:</string>
 </resources>

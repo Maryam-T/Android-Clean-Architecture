@@ -27,10 +27,12 @@ class NotesListAdapter(var notes: ArrayList<Note>, val action: ListAction): Recy
         private val noteTitle = view.title
         private val noteContent = view.content
         private val noteDate = view.date
+        private val noteWordCount = view.word_count
 
         fun bind(note: Note) {
             noteTitle.text = note.title
             noteContent.text = note.content
+            noteWordCount.text = "Words: ${note.wordCount}"
 
             val sdf = SimpleDateFormat("MMM dd, HH:mm:ss")
             val resultDate = Date(note.updateDate)
