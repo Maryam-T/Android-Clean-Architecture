@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.marand.cleanarchitecture.presentation.ListFragment"
+        android:name="com.marand.cleanarchitecture.presentation.main.noteslist.ListFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/noteFragment"
-        android:name="com.marand.cleanarchitecture.presentation.NoteFragment"
+        android:name="com.marand.cleanarchitecture.presentation.main.note.NoteFragment"
         android:label="fragment_note"
         tools:layout="@layout/fragment_note" >
         <argument

@@ -1,13 +1,12 @@
-package com.marand.cleanarchitecture.framework
+package com.marand.cleanarchitecture.framework.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.marand.cleanarchitecture.framework.UseCases
 import com.marand.cleanarchitecture.framework.di.ApplicationModule
 import com.marand.cleanarchitecture.framework.di.DaggerViewModelComponent
 import com.marand.core.data.Note
-import com.marand.core.repository.NoteRepository
-import com.marand.core.usecase.AddNote
 import com.marand.core.usecase.DeleteNote
 import com.marand.core.usecase.GetAllNotes
 import com.marand.core.usecase.GetNote

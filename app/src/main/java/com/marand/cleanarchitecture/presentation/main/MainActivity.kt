@@ -1,4 +1,4 @@
-package com.marand.cleanarchitecture.presentation
+package com.marand.cleanarchitecture.presentation.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

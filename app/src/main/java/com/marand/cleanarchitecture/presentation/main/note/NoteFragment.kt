@@ -1,4 +1,4 @@
-package com.marand.cleanarchitecture.presentation
+package com.marand.cleanarchitecture.presentation.main.note
 
 import android.app.AlertDialog
 import android.content.Context.INPUT_METHOD_SERVICE
@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import com.marand.cleanarchitecture.R
-import com.marand.cleanarchitecture.framework.NoteViewModel
+import com.marand.cleanarchitecture.framework.viewmodel.NoteViewModel
 import com.marand.core.data.Note
 import kotlinx.android.synthetic.main.fragment_note.*
 

@@ -1,4 +1,4 @@
-package com.marand.cleanarchitecture.presentation
+package com.marand.cleanarchitecture.presentation.main.noteslist
 
 import android.view.LayoutInflater
 import android.view.View

@@ -1,4 +1,4 @@
-package com.marand.cleanarchitecture.presentation
+package com.marand.cleanarchitecture.presentation.main.noteslist
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,7 +13,7 @@ import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.marand.cleanarchitecture.R
-import com.marand.cleanarchitecture.framework.ListViewModel
+import com.marand.cleanarchitecture.framework.viewmodel.ListViewModel
 import kotlinx.android.synthetic.main.fragment_list.*
 
 class ListFragment : Fragment(), ListAction {
